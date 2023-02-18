@@ -1,4 +1,6 @@
 <script setup>
+import EnvelopIcon from '@/Icons/EnvelopeIcon.vue';
+import KeyIcon from '@/Icons/KeyIcon.vue';
 import Logo from '@/Components/Logo.vue';
 import Submit from '@/Components/Submit.vue';
 import TextBox from '@/Components/TextBox.vue';
@@ -38,13 +40,19 @@ onMounted(() => {
             </div>
             <form @submit.prevent="authenticate" class="flex flex-col gap-6">
                 <div class="space-y-2">
-                    <label for="email" class="block text-sm select-none">Email Address</label>
+                    <label for="email" class="flex items-center gap-1 text-sm select-none">
+                        <EnvelopIcon class="h-5 w-5"/>
+                        Email Address
+                    </label>
                     <TextBox type="email" id="email" v-model="form.email" autocomplete="email" />
                     <span class="text-xs text-red-600">{{ form.errors.email }}</span>
                 </div>
 
                 <div class="space-y-2">
-                    <label for="password" class="block text-sm select-none">Password</label>
+                    <label for="password" class="flex items-center gap-1 text-sm select-none">
+                        <KeyIcon class="h-5 w-5 text-white" />
+                        Password
+                    </label>
                     <TextBox type="password" id="password" v-model="form.password" autocomplete="current-password" />
                     <span class="text-xs text-red-600">{{ form.errors.password }}</span>
                 </div>

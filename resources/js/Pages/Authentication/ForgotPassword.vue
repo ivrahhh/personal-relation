@@ -6,6 +6,7 @@ import Toast from '@/Components/Toast.vue';
 import Authentication from '@/Layouts/Authentication.vue';
 import { useForm, Link } from '@inertiajs/vue3';
 import { useToastStore } from '@/Stores/toast.js'
+import EnvelopeIcon from '@/Icons/EnvelopeIcon.vue';
 
 const toast = useToastStore()
 const form = useForm({
@@ -33,7 +34,10 @@ const sendRequest = () => {
             </div>
             <form @submit.prevent="sendRequest" class="flex flex-col gap-6">
                 <div class="space-y-2">
-                    <label for="email" class="block text-sm select-none">Email Address</label>
+                    <label for="email" class="flex items-center gap-1 text-sm select-none">
+                        <EnvelopeIcon class="h-5 w-5"/>
+                        Email Address
+                    </label>
                     <TextBox type="email" id="email" v-model="form.email" autocomplete="email" />
                     <span class="text-xs text-red-600">{{ form.errors.email }}</span>
                 </div>
