@@ -4,8 +4,11 @@ import Submit from '@/Components/Submit.vue';
 import TextBox from '@/Components/TextBox.vue';
 import Authentication from '@/Layouts/Authentication.vue';
 import { Link, useForm } from '@inertiajs/vue3';
+import { onMounted } from 'vue';
+import { useToastStore } from '@/Stores/toast.js'
+import Toast from '@/Components/Toast.vue';
 
-
+const toast = useToastStore()
 const form = useForm({
     email: '',
     password: '',
@@ -18,6 +21,12 @@ const authenticate = () => {
         preserveScroll: true,
     })
 }
+
+onMounted(() => {
+    if(toast.getNotification) {
+        toast.openToast()
+    }
+})
 </script>
 
 <template>
@@ -52,4 +61,19 @@ const authenticate = () => {
             </form>
         </div>
     </Authentication>
+    <Transition
+        appear
+        enter-active-class="transition ease-out duration-200"
+        enter-from-class="translate-x-full opacity-0"
+        enter-to-class="translate-x-0 opacity-100"
+        leave-active-class="transition ease-in duration-200"
+        leave-from-class="scale-100 opacity-100"
+        leave-to-class="scale-90 opacity-0" >
+        <Toast 
+            title="Password Reset"
+            :body="$page.props.notifications.success"
+            @close="toast.closeToast()"
+            v-if="toast.active"
+        />
+    </Transition>
 </template>

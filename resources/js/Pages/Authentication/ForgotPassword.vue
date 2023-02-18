@@ -4,8 +4,7 @@ import Submit from '@/Components/Submit.vue';
 import TextBox from '@/Components/TextBox.vue';
 import Toast from '@/Components/Toast.vue';
 import Authentication from '@/Layouts/Authentication.vue';
-import { useForm } from '@inertiajs/vue3';
-import { ref, computed } from 'vue';
+import { useForm, Link } from '@inertiajs/vue3';
 import { useToastStore } from '@/Stores/toast.js'
 
 const toast = useToastStore()
@@ -38,8 +37,11 @@ const sendRequest = () => {
                     <TextBox type="email" id="email" v-model="form.email" autocomplete="email" />
                     <span class="text-xs text-red-600">{{ form.errors.email }}</span>
                 </div>
-
-                <Submit label="Send Reset Link" :loading="form.processing" />
+                
+                <div class="flex flex-col gap-2 items-center">
+                    <Submit label="Send Reset Link" :loading="form.processing" />
+                    <Link :href="route('login')" class="text-sm text-blue-600 underline">Back to Login</Link>
+                </div>
             </form>
         </div>
     </Authentication>
