@@ -45,7 +45,7 @@ const authenticate = () => {
                         <input type="checkbox" id="remember" v-model="form.remember" value="true" class="accent-blue-600" />
                         <label for="remember" class="block text-sm select-none">Remember Me</label>
                     </div>
-                    <Link href="" class="text-sm underline text-blue-600">Forgot Password</Link>
+                    <Link :href="route('password.request')" class="text-sm underline text-blue-600">Forgot Password</Link>
                 </div>
 
                 <Submit label="Log in" :loading="form.processing" />
