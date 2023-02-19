@@ -33,6 +33,11 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    /**
+     * Attempt to authenticate the user
+     * 
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function authenticate() : void
     {
         $this->checkRateLimit();
