@@ -65,8 +65,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="fixed right-8 bottom-8 p-4 bg-slate-900 rounded-lg w-96 shadow-md ring-1 ring-black ring-opacity-5">
-        <div class="flex justify-between items-center">
+    <div class="fixed right-8 bottom-8 bg-slate-900 rounded-lg w-96 shadow-md ring-1 ring-black ring-opacity-5">
+        <div class="flex justify-between items-center px-4 py-2">
             <span class="flex items-center gap-2 text-sm font-semibold">
                 <component :is="iconType" :class="iconClass" />
                 {{ title }}
