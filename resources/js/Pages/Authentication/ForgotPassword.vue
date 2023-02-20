@@ -25,11 +25,11 @@ const sendRequest = () => {
 
 <template>
     <Authentication>
-        <div class="flex flex-col gap-4 w-96 p-4 bg-slate-900 rounded-lg shadow ring-1 ring-black ring-opacity-5">
+        <div class="flex flex-col gap-4 w-96 p-4 bg-white rounded-lg shadow ring-1 ring-black ring-opacity-5">
             <div class="flex flex-col gap-2 items-center p-4 select-none">
                 <Logo class="h-14 w-14 fill-red-600"/>
             </div>
-            <div class="mb-4 text-sm text-gray-400">
+            <div class="mb-4 text-sm text-gray-500">
                 Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.
             </div>
             <form @submit.prevent="sendRequest" class="flex flex-col gap-6">

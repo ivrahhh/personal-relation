@@ -33,7 +33,7 @@ onMounted(() => {
 
 <template>
     <Authentication>
-        <div class="flex flex-col gap-4 w-96 p-4 bg-slate-900 rounded-lg shadow ring-1 ring-black ring-opacity-5">
+        <div class="flex flex-col gap-4 w-96 p-4 bg-white rounded-lg shadow ring-1 ring-black ring-opacity-5">
             <div class="flex flex-col gap-2 items-center p-4 select-none">
                 <Logo class="h-14 w-14 fill-red-600"/>
                 <span class="text-xl">Log in</span>
@@ -50,7 +50,7 @@ onMounted(() => {
 
                 <div class="space-y-2">
                     <label for="password" class="flex items-center gap-1 text-sm select-none">
-                        <KeyIcon class="h-5 w-5 text-white" />
+                        <KeyIcon class="h-5 w-5" />
                         Password
                     </label>
                     <TextBox type="password" id="password" v-model="form.password" autocomplete="current-password" />

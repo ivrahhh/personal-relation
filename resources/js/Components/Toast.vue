@@ -65,20 +65,18 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="fixed right-8 bottom-8 bg-slate-900 rounded-lg w-96 shadow-md ring-1 ring-black ring-opacity-5">
+    <div class="fixed right-8 bottom-8 bg-white rounded-lg w-96 shadow-md ring-1 ring-black ring-opacity-5">
         <div class="flex justify-between items-center px-4 py-2">
             <span class="flex items-center gap-2 text-sm font-semibold">
                 <component :is="iconType" :class="iconClass" />
                 {{ title }}
             </span>
-            <span class="cursor-pointer text-gray-700  hover:text-gray-200" @click="$emit('close')">
+            <span class="cursor-pointer text-gray-300  hover:text-gray-700" @click="$emit('close')">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-4 h-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </span>
         </div>
-        <div class="block p-4 text-sm">
-            {{ body }}
-        </div>
+        <div class="block p-4 text-sm">{{ body }}</div>
     </div>
 </template>
