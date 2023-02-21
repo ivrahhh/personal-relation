@@ -67,7 +67,7 @@ const defaultImage = computed(() => {
                     </NavLink>
                 </nav>
             </aside>
-            <div class="grow">
+            <div class="grow overflow-auto">
                 <main class="flex flex-col w-full p-8">
                     <slot />
                 </main>
